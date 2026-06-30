@@ -5,14 +5,16 @@ import en from '../locales/en.json'
 import pt from '../locales/pt.json'
 import es from '../locales/es.json'
 
+const savedLang = localStorage.getItem('habit-tracker-lang') ?? 'pt'
+
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
     pt: { translation: pt },
     es: { translation: es },
   },
-  lng: 'en',
-  fallbackLng: 'en',
+  lng: savedLang,
+  fallbackLng: 'pt',
   interpolation: { escapeValue: false },
 })
 
